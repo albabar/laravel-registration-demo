@@ -11,7 +11,7 @@
 |
 */
 
-get('/', 'HomeController@index');
+get('/',  ['middleware' => 'guest', 'uses' => 'HomeController@index']);
 get('dashboard', ['middleware' => 'auth', 'uses' => 'Admin\DashboardController@index']);
 post('register', 'Auth\AuthController@postRegister');
 post('login', 'Auth\AuthController@postLogin');
