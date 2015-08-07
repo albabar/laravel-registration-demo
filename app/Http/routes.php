@@ -12,3 +12,6 @@
 */
 
 get('/', 'HomeController@index');
+post('auth/register', 'Auth\AuthController@postRegister');
+post('auth/login', 'Auth\AuthController@postLogin');
+get('auth/logout', 'Auth\AuthController@getLogout');
