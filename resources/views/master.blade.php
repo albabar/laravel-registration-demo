@@ -32,6 +32,10 @@
 </nav>
 <body>
 <div class="container">
+    @if(Session::has('flasher'))
+        <div class="alert alert-info">{{Session::get('flasher')}}</div>
+    @endif
+
     @yield('content')
 </div>
 </body>
