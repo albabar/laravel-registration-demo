@@ -25,7 +25,14 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="/">Home <span class="sr-only">(current)</span></a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                @if(Auth::check())
+                    <li><a href="{{url('logout')}}">Logout</a></li>
+                @else
+                    <li><a href="{{url('dashboard')}}">Dashboard</a></li>
+                @endif
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

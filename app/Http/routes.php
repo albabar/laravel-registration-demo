@@ -12,6 +12,7 @@
 */
 
 get('/', 'HomeController@index');
-post('auth/register', 'Auth\AuthController@postRegister');
-post('auth/login', 'Auth\AuthController@postLogin');
-get('auth/logout', 'Auth\AuthController@getLogout');
+get('dashboard', ['middleware' => 'auth', 'uses' => 'Admin\DashboardController@index']);
+post('register', 'Auth\AuthController@postRegister');
+post('login', 'Auth\AuthController@postLogin');
+get('logout', 'Auth\AuthController@getLogout');
